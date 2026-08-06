@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">Expense Planner</div>
+    <p>Plan your budget, set category limits, and receive notifications at every 10% milestone.</p>
+  </header>
+
+  <main>
+    <section class="card form-card">
+      <h2>Category Setup</h2>
+      <form id="category-form" class="form-row">
+        <label>
+          Category name
+          <input type="text" id="category-name" placeholder="e.g. Groceries" required />
+        </label>
+        <label>
+          Monthly limit
+          <input type="number" id="category-limit" placeholder="0.00" min="0.01" step="0.01" required />
+        </label>
+        <button type="submit">Add category</button>
+      </form>
+    </section>
+
+    <section class="card form-card">
+      <h2>Add Expense</h2>
+      <form id="expense-form" class="form-row">
+        <label>
+          Category
+          <select id="expense-category" required></select>
+        </label>
+        <label>
+          Amount
+          <input type="number" id="expense-amount" placeholder="0.00" min="0.01" step="0.01" required />
+        </label>
+        <label>
+          Date
+          <input type="date" id="expense-date" required />
+        </label>
+        <button type="submit">Add expense</button>
+      </form>
+    </section>
+
+    <section class="card split-card">
+      <div>
+        <h2>Category Summary</h2>
+        <div id="category-list" class="list"></div>
+      </div>
+      <div>
+        <h2>Notifications</h2>
+        <div id="notification-list" class="notifications"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Monthly Metrics</h2>
+      <div id="metric-summary" class="metrics"></div>
+    </section>
+
+    <section class="card actions-card">
+      <button id="clear-all">Reset all data</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Use this planner to track spending by category and compare last month to this month.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
